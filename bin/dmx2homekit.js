@@ -18,7 +18,14 @@ Config.devices.forEach((d) => {
     });
 
     device.accessories.forEach((accessory) => {
+        let enabled = !!accessory.enabled;
+        
         // console.log('accessory', accessory);
+        if (accessory.name in d.accessories) enabled = !!d.accessories[accessory.name];
+        if (!enabled) return true;
+
+        console.log('inited', accessory.name);
+
         let className;
         let HKDeviceHandler;
         let HKDevice = new HomeKit({
