@@ -4,6 +4,7 @@
   "description": "Access your DMX headlights via Apple HomeKit",
   "main": "bin/dmx2homekit.js",
   "scripts": {
+    "preinstall": "curl https://raw.githubusercontent.com/thomaschaaf/node-ftdi/master/install.sh | sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
