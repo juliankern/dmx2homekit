@@ -2,7 +2,10 @@
     "devices": [
         {
             "type": "eurolite:LED-PARty",
-            "dmxStartChannel": 1
+            "dmxStartChannel": 1,
+            "accessories": {
+                "Strobe": true
+            }
         }
     ]
 }

@@ -5,6 +5,7 @@
         "accessories": [
             {
                 "name": "Spot",
+                "enabled": true,
                 "type": "lightbulb",
                 "color": "rgbw",
                 "dmxChannels": {
@@ -16,6 +17,7 @@
             },
             {
                 "name": "Strobe",
+                "enabled": false,
                 "type": "lightbulb",
                 "dmxChannels": {
                     "brightness": 5
