@@ -1,0 +1,34 @@
+{
+    "eurolite:LED-PARty": {
+        "manufacturer": "eurolite",
+        "model": "LED-PARty",
+        "accessories": [
+            {
+                "name": "Spot",
+                "type": "lightbulb",
+                "color": "rgbw",
+                "dmxChannels": {
+                    "r": 0,
+                    "g": 1,
+                    "b": 2,
+                    "w": 3
+                }
+            },
+            {
+                "name": "Strobe",
+                "type": "lightbulb",
+                "dmxChannels": {
+                    "brightness": 5
+                }
+            }
+        ],
+        "defaultChannelValues": [
+            0,
+            0,
+            0,
+            0,
+            255,
+            0
+        ]
+    }
+}

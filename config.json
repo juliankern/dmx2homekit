@@ -1,0 +1,8 @@
+{
+    "devices": [
+        {
+            "type": "eurolite:LED-PARty",
+            "dmxStartChannel": 1
+        }
+    ]
+}

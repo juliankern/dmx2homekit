@@ -1,0 +1,30 @@
+{
+  "name": "dmx2homekit",
+  "version": "1.0.0",
+  "description": "Access your DMX headlights via Apple HomeKit",
+  "main": "bin/dmx2homekit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juliankern/dmx2homekit.git"
+  },
+  "keywords": [
+    "dmx",
+    "homekit",
+    "apple",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Julian Kern <mail@juliankern.com> (https://juliankern.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juliankern/dmx2homekit/issues"
+  },
+  "homepage": "https://github.com/juliankern/dmx2homekit#readme",
+  "optionalDependencies": {
+    "ftdi": "^1.2.1",
+    "homekit": "0.0.3"
+  }
+}
