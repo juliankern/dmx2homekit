@@ -4,7 +4,6 @@
   "description": "Access your DMX headlights via Apple HomeKit",
   "main": "bin/dmx2homekit.js",
   "scripts": {
-    "preinstall": "curl https://raw.githubusercontent.com/thomaschaaf/node-ftdi/master/install.sh | sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +24,10 @@
   },
   "homepage": "https://github.com/juliankern/dmx2homekit#readme",
   "optionalDependencies": {
-    "ftdi": "^1.2.1",
-    "homekit": "0.0.3"
+    "hap-nodejs": "github:KhaosT/HAP-NodeJS"
+  },
+  "dependencies": {
+    "dmx": "0.0.5",
+    "node-persist": "^2.1.0"
   }
 }

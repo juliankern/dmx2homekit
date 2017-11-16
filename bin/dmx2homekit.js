@@ -1,4 +1,5 @@
-const HomeKit = require('../lib/HomeKit.class');
+const HomeKit = require('../lib/homekit');
+// const HomeKit = require('../lib/HomeKit.class');
 const Devices = require('../devices.json');
 const Config = require('../config.json');
 
@@ -6,6 +7,9 @@ global.d2HK = {};
 global.d2HK.DMX = require('../lib/DMX.class');
 
 let accessoryCounter = 0;
+
+const storage = require('node-persist');
+storage.initSync();
 
 Config.devices.forEach((d) => {
     let device = Devices[d.type];
@@ -28,13 +32,7 @@ Config.devices.forEach((d) => {
 
         let className;
         let HKDeviceHandler;
-        let HKDevice = new HomeKit({
-            id: 'dmx2homekit',
-            deviceName: `${device.model} ${accessory.name}`,
-            model: device.model,
-            service: accessory.type.charAt(0).toUpperCase() + accessory.type.slice(1),
-            serial: 'A000000' + accessoryCounter++
-        });
+
 
         if (accessory.color) {
             className = accessory.color;
@@ -48,6 +46,15 @@ Config.devices.forEach((d) => {
             throw `${className}.class.js not found! ` + e;
         }
 
-        new HKDeviceHandler(HKDevice, { startChannel: device.dmxStartChannel, channels: accessory.dmxChannels });
+        let HKDevice = new HKDeviceHandler({
+            id: 'dmx2homekit',
+            deviceName: `${device.model} ${accessory.name}`,
+            model: device.model,
+            service: accessory.type.charAt(0).toUpperCase() + accessory.type.slice(1),
+            serial: 'A000000' + accessoryCounter++,
+            startChannel: device.dmxStartChannel,
+        }, { startChannel: device.dmxStartChannel, channels: accessory.dmxChannels });
     });
 });
+
+process.stdin.resume();
