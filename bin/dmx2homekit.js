@@ -25,7 +25,7 @@ Config.devices.forEach((d) => {
         let enabled = !!accessory.enabled;
         
         // console.log('accessory', accessory);
-        if (accessory.name in d.accessories) enabled = !!d.accessories[accessory.name];
+        if (d.accessories && accessory.name in d.accessories) enabled = !!d.accessories[accessory.name];
         if (!enabled) return true;
 
         console.log('inited', accessory.name);
