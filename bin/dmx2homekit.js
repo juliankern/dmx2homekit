@@ -48,7 +48,7 @@ Config.devices.forEach((d, deviceIndex) => {
 
         let HKDevice = new HKDeviceHandler({
             id: 'dmx2homekit',
-            deviceName: `${device.model} ${accessory.name}${deviceIndex ? deviceIndex + 1 : ''}`,
+            deviceName: `${device.model} ${accessory.name}${deviceIndex ? '-' + (deviceIndex + 1) : ''}`,
             model: device.model,
             service: accessory.type.charAt(0).toUpperCase() + accessory.type.slice(1),
             serial: 'A000000' + accessoryCounter++,
