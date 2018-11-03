@@ -33,6 +33,40 @@
             0
         ]
     },
+    "fungeneration:LED-Pot": {
+        "manufacturer": "fun generation",
+        "model": "LED Pot",
+        "accessories": [
+            {
+                "name": "Spot",
+                "enabled": true,
+                "type": "lightbulb",
+                "color": "rgbw",
+                "dmxChannels": {
+                    "r": 1,
+                    "g": 2,
+                    "b": 3,
+                    "w": 4
+                }
+            },
+            {
+                "name": "Strobe",
+                "enabled": false,
+                "type": "lightbulb",
+                "dmxChannels": {
+                    "brightness": 5
+                }
+            }
+        ],
+        "defaultChannelValues": [
+            255,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
     "stairville:LEDBar240/8": {
         "manufacturer": "stairville",
         "model": "LED Bar 240/8 RGB",
@@ -124,7 +158,7 @@
                     "g": 22,
                     "b": 24
                 }
-            },
+            }
         ],
         "defaultChannelValues": [
             0,
