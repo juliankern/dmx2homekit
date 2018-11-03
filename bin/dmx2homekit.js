@@ -11,7 +11,7 @@ let accessoryCounter = 0;
 const storage = require('node-persist');
 storage.initSync();
 
-Config.devices.forEach((d) => {
+Config.devices.forEach((d, deviceIndex) => {
     let device = Devices[d.type];
     // console.log('device', device);
 
@@ -48,7 +48,7 @@ Config.devices.forEach((d) => {
 
         let HKDevice = new HKDeviceHandler({
             id: 'dmx2homekit',
-            deviceName: `${device.model} ${accessory.name}`,
+            deviceName: `${device.model} ${accessory.name}${deviceIndex ? deviceIndex + 1 : ''}`,
             model: device.model,
             service: accessory.type.charAt(0).toUpperCase() + accessory.type.slice(1),
             serial: 'A000000' + accessoryCounter++,
