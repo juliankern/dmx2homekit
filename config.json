@@ -1,11 +1,12 @@
 {
     "devices": [
         {
-            "type": "eurolite:LED-PARty",
-            "dmxStartChannel": 1,
-            "accessories": {
-                "Strobe": true
-            }
+            "type": "stairville:LEDBar240/8",
+            "dmxStartChannel": 1
+        },
+        {
+            "type": "stairville:LEDBar240/8",
+            "dmxStartChannel": 25
         }
     ]
 }
