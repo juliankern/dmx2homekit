@@ -2,11 +2,13 @@
     "devices": [
         {
             "type": "stairville:LEDBar240/8",
-            "dmxStartChannel": 1
+            "dmxStartChannel": 1,
+            "switchType": "animate"
         },
         {
             "type": "stairville:LEDBar240/8",
-            "dmxStartChannel": 25
+            "dmxStartChannel": 25,
+            "switchType": "animate"
         }
     ]
 }

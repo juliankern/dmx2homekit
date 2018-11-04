@@ -18,7 +18,9 @@ Config.devices.forEach((d, deviceIndex) => {
     device.dmxStartChannel = d.dmxStartChannel;
 
     device.defaultChannelValues.forEach((value, channel) => {
-        global.d2HK.DMX.set(device.dmxStartChannel + channel, value);
+        global.d2HK.DMX
+            .set(device.dmxStartChannel + channel, value)
+            .render();
     });
 
     device.accessories.forEach((accessory) => {
@@ -32,7 +34,6 @@ Config.devices.forEach((d, deviceIndex) => {
 
         let className;
         let HKDeviceHandler;
-
 
         if (accessory.color) {
             className = accessory.color;
@@ -53,7 +54,11 @@ Config.devices.forEach((d, deviceIndex) => {
             service: accessory.type.charAt(0).toUpperCase() + accessory.type.slice(1),
             serial: 'A000000' + accessoryCounter++,
             startChannel: device.dmxStartChannel,
-        }, { startChannel: device.dmxStartChannel, channels: accessory.dmxChannels });
+        }, { 
+            startChannel: device.dmxStartChannel, 
+            channels: accessory.dmxChannels, 
+            switchType: d.switchType || 'render'
+        });
     });
 });
 
